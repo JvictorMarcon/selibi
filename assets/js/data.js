@@ -93,5 +93,5 @@ window.CILIB_TIMELINE = [
   { year: "2020", text: "Completa 20 anos de carreira e assina com a Netflix para adaptar suas histórias." },
   { year: "2022", text: "Lança novos títulos e anuncia a reedição revisada da série Fala sério." },
   { year: "2024", text: "Estreia na não ficção com Felicidade inegociável e outras rimas." },
-  { year: "2026", text: "É a homenageada do CILIB." }
+  { year: "2026", text: "É a homenageada do SELIBI." }
 ];

@@ -1,4 +1,4 @@
-# Blog do CILIB 2026 · Thalita Rebouças
+# Blog do SELIBI 2026 · Thalita Rebouças
 
 Site estático (HTML, CSS e JS puros) com Supabase como back-end e deploy na Vercel. Não precisa de build nem de `npm install`.
 

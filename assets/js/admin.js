@@ -105,7 +105,7 @@
     slugTouched = false;
     const f = $("#post-form");
     f.reset();
-    f.elements.author_name.value = "Equipe CILIB";
+    f.elements.author_name.value = "Equipe SELIBI";
     syncPreview();
     $("#form-title").textContent = "Novo texto";
     $("#save-btn").textContent = "Publicar texto";
@@ -128,7 +128,7 @@
       category: el.category.value.trim() || "Vida e obra",
       excerpt: el.excerpt.value.trim() || null,
       content: el.content.value.trim(),
-      author_name: el.author_name.value.trim() || "Equipe CILIB",
+      author_name: el.author_name.value.trim() || "Equipe SELIBI",
       cover_url: el.cover_url.value.trim() || null,
       image_credit: el.image_credit.value.trim() || null,
       tone: el.tone.value,

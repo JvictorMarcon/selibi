@@ -18,7 +18,7 @@
     if (!data) return notFound(root);
 
     postId = data.id;
-    document.title = `${data.title} | Blog CILIB`;
+    document.title = `${data.title} | Blog SELIBI`;
     const meta = document.querySelector('meta[name="description"]');
     if (meta && data.excerpt) meta.setAttribute("content", data.excerpt);
 

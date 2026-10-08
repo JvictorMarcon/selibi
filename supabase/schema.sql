@@ -1,5 +1,5 @@
 -- =========================================================
--- Blog CILIB 2026 · Thalita Rebouças
+-- Blog SELIBI 2026 · Thalita Rebouças
 -- Rode este arquivo inteiro no Supabase: SQL Editor > New query > Run
 -- =========================================================
 
@@ -14,7 +14,7 @@ create table if not exists public.posts (
   content       text not null,
   category      text not null default 'Vida e obra',
   tone          text not null default 'pink' check (tone in ('pink','sun','sky','mint','lilac')),
-  author_name   text not null default 'Equipe CILIB',
+  author_name   text not null default 'Equipe SELIBI',
   cover_url     text,
   published     boolean not null default true,
   published_at  timestamptz not null default now(),
@@ -106,7 +106,7 @@ grant select on public.admins to authenticated;
 insert into public.posts (slug, title, excerpt, category, tone, published_at, content) values
 (
   'quem-e-thalita-reboucas',
-  'Quem é Thalita Rebouças, a homenageada do CILIB',
+  'Quem é Thalita Rebouças, a homenageada do SELIBI',
   'Da menina que se chamava de “fazedora de livros” à autora que vendeu milhões de exemplares.',
   'Vida e obra', 'pink', now() - interval '3 days',
 $$Thalita Rebouças nasceu no Rio de Janeiro, em 10 de novembro de 1974. Muito antes de qualquer best-seller, aos dez anos, ela já juntava folhas, grampeava, desenhava as ilustrações e se apresentava como “fazedora de livros”. A vontade de escrever, segundo ela mesma conta, nasceu depois de ler *Marcelo, marmelo, martelo*, de Ruth Rocha.
@@ -123,7 +123,7 @@ Em 2003 veio *Tudo por um popstar*, que virou best-seller. A partir daí ela nã
 
 Entre 2009 e 2014, Thalita foi repórter do programa Vídeo Show. Várias das suas histórias foram adaptadas para o teatro, o cinema e o streaming, e ela costuma aparecer em pequenas participações nos filmes. Em 2020, ao completar 20 anos de carreira, assinou contrato com a Netflix.
 
-Hoje, leitores que cresceram com os livros dela levam os próprios filhos para as filas de autógrafo. É por isso, e por tudo que você vai ler neste blog, que ela é a homenageada do CILIB.$$
+Hoje, leitores que cresceram com os livros dela levam os próprios filhos para as filas de autógrafo. É por isso, e por tudo que você vai ler neste blog, que ela é a homenageada do SELIBI.$$
 ),
 (
   'por-onde-comecar-a-ler-thalita',

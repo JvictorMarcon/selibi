@@ -4,7 +4,7 @@
 window.CILIB_CONFIG = {
   SUPABASE_URL: "https://ffmnfrclqyzovqkkvcfk.supabase.co",
   SUPABASE_KEY: "sb_publishable_TRuNUgaGqcqAIDP6VE9lEg_o7a3RFGl",
-  EVENT_NAME: "CILIB",
+  EVENT_NAME: "SELIBI",
   EVENT_YEAR: 2026,
   HONOREE: "Thalita Rebouças"
 };
