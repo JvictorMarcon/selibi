@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Thalita Rebouças | Blog do CILIB 2026</title>
+  <meta name="description" content="Blog do CILIB 2026 sobre a vida e a obra de Thalita Rebouças, a autora homenageada do ano.">
+  <meta property="og:title" content="Thalita Rebouças | Blog do CILIB 2026">
+  <meta property="og:description" content="Vida, obra e opiniões sobre a autora homenageada do CILIB.">
+  <meta name="theme-color" content="#FF5C9E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23FF5C9E'/%3E%3Ctext x='32' y='46' font-family='Arial Black,sans-serif' font-size='40' font-weight='900' text-anchor='middle' fill='%23241B33'%3ET%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    // Esconde só o topo até a animação começar (evita "piscar"). Se o GSAP falhar, mostra tudo em 2,5 s.
+    if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.documentElement.classList.add("anim");
+      setTimeout(function () { document.documentElement.classList.remove("anim"); }, 2500);
+    }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <nav class="site-nav" aria-label="Principal">
+        <a class="logo" href="index.html">Thalita <small><span data-year>2026</span></small></a>
+        <ul class="nav-links">
+          <li><a href="#thalita">Quem é</a></li>
+          <li><a href="#estante">Estante</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#linha">Linha do tempo</a></li>
+          <li><a href="#mural">Mural</a></li>
+        </ul>
+        <a class="btn btn-ink btn-sm nav-cta" href="#mural">Deixar um recado</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Abrir menu"><span></span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-card">
+          <div class="hero-copy">
+            <div class="hero-kicker">
+              <span class="chip">Autora homenageada</span>
+              <span class="chip">Blog do CILIB <span data-year>2026</span></span>
+            </div>
+            <h1 class="hero-title"><span class="line"><span class="line-inner">Thalita</span></span><span class="line"><span class="line-inner">Rebouças</span></span></h1>
+            <div class="stack" style="gap:22px">
+              <p class="hero-lede">A carioca que fez uma geração inteira rir da própria adolescência. Aqui a gente conta a história dela, fala dos livros e dá nossa opinião.</p>
+              <div class="hero-actions">
+                <a class="btn btn-ink" href="#blog">Ler o blog</a>
+                <a class="btn btn-light" href="#estante">Ver os livros</a>
+              </div>
+            </div>
+          </div>
+          <div class="hero-art">
+            <div class="hero-stack" id="hero-stack"></div>
+            <div class="sticker" aria-hidden="true"><span>CILIB<strong data-year>2026</strong></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quem é -->
+    <section class="section" id="thalita">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Quem é<br>Thalita</h2>
+          <p>Jornalista, escritora e uma das autoras que mais vendem livros para jovens no Brasil.</p>
+        </div>
+        <div class="about">
+          <div class="about-big">
+            <h2>Aos dez anos, ela grampeava folhas, desenhava as ilustrações e se dizia “fazedora de livros”.</h2>
+            <div id="about-photo"></div>
+            <p class="sign">O desejo de escrever veio depois de ler Marcelo, marmelo, martelo, de Ruth Rocha.</p>
+          </div>
+          <div class="about-text">
+            <p>Thalita Rebouças nasceu no Rio de Janeiro em 10 de novembro de 1974. Começou a faculdade de Direito, desistiu depois de dois anos e foi estudar Jornalismo. Trabalhou como jornalista antes de lançar o primeiro livro, <em>Traição entre amigas</em>, em 2000, aos 25 anos.</p>
+            <p>A virada veio em 2003 com <em>Tudo por um popstar</em>. Depois chegaram a série <em>Fala sério</em>, com a Malu e a mãe dela, e a série <em>Confissões</em>, que dá voz a quem costuma ficar de fora. Os livros tratam de primeiro beijo, vergonha dos pais, amizade e exclusão com muito humor.</p>
+            <p>Várias histórias foram para o teatro, o cinema e o streaming. Em 2024 ela lançou o primeiro livro de não ficção, voltado para mulheres adultas.</p>
+            <div class="facts">
+              <div class="fact"><b>2,3 milhões</b>de exemplares vendidos, segundo a imprensa.</div>
+              <div class="fact"><b>Mais de 20 países</b>receberam traduções dos livros dela.</div>
+              <div class="fact"><b>Vídeo Show</b>Foi repórter do programa entre 2009 e 2014.</div>
+              <div class="fact"><b>Netflix</b>Assinou contrato em 2020 para adaptar suas histórias.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estante -->
+    <section class="section" id="estante">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Estante</h2>
+          <p>Alguns dos livros mais conhecidos. As capas são imagens de divulgação das editoras.</p>
+        </div>
+        <div class="shelf-bar">
+          <div class="filters" id="shelf-filters" role="group" aria-label="Filtrar livros"></div>
+          <span class="shelf-count" id="shelf-count" aria-live="polite"></span>
+        </div>
+        <div class="shelf-grid" id="shelf-grid"></div>
+      </div>
+    </section>
+
+    <!-- Blog -->
+    <section class="section" id="blog">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Blog</h2>
+          <p>Textos de alunos e professores sobre a vida, a obra e o que a gente acha de tudo isso.</p>
+        </div>
+        <div class="post-filters" id="post-filters" role="group" aria-label="Filtrar textos"></div>
+        <div id="posts"><p class="loading">Carregando textos…</p></div>
+      </div>
+    </section>
+
+    <!-- Linha do tempo -->
+    <section class="section" id="linha">
+      <div class="wrap">
+        <div class="timeline-card">
+          <div class="section-head">
+            <h2>Linha do<br>tempo</h2>
+            <p>De “fazedora de livros” a homenageada do CILIB.</p>
+          </div>
+          <ol class="tl-track" id="timeline-track" tabindex="0" aria-label="Linha do tempo, role para o lado"></ol>
+          <p class="tl-hint">Arraste para o lado para ver tudo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mural -->
+    <section class="section" id="mural">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Mural de<br>recados</h2>
+          <p>Escreva o que os livros da Thalita significam para você. Os recados aparecem depois da aprovação da equipe.</p>
+        </div>
+        <div class="mural">
+          <form class="note-form" id="note-form" novalidate>
+            <h3>Deixe seu recado</h3>
+            <div class="field">
+              <label for="n-name">Seu nome</label>
+              <input id="n-name" name="name" required maxlength="60" autocomplete="given-name">
+            </div>
+            <div class="field">
+              <label for="n-class">Turma ou escola <small>(opcional)</small></label>
+              <input id="n-class" name="class_group" maxlength="60" placeholder="Ex.: 8º ano B">
+            </div>
+            <div class="field">
+              <label for="n-body">Recado</label>
+              <textarea id="n-body" name="body" required maxlength="600"></textarea>
+            </div>
+            <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button class="btn btn-ink" type="submit">Enviar recado</button>
+          </form>
+          <div class="notes" id="notes"><p class="loading">Carregando recados…</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-card">
+        <div class="footer-big">Fala sério,<br>que leitura!</div>
+        <div class="footer-row">
+          <span>Blog do CILIB <span data-year>2026</span>. Autora homenageada: Thalita Rebouças.</span>
+          <span><a href="admin.html">Área da equipe</a></span>
+        </div>
+        <p class="footer-credit">Site feito por <strong>João Victor Marcondes Machado Barbosa de Queiroz</strong>, 3º ano B.<br>Fotos da Thalita: Eduardo Cilto e TV Brasil, licença CC BY, via Wikimedia Commons. Capas: divulgação das editoras.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/anim.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/home.js"></script>
+</body>
+</html>

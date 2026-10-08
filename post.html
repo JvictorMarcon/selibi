@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Blog do CILIB</title>
+  <meta name="description" content="Texto do blog do CILIB sobre Thalita Rebouças.">
+  <meta name="theme-color" content="#FF5C9E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23FF5C9E'/%3E%3Ctext x='32' y='46' font-family='Arial Black,sans-serif' font-size='40' font-weight='900' text-anchor='middle' fill='%23241B33'%3ET%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    // Esconde só o topo até a animação começar (evita "piscar"). Se o GSAP falhar, mostra tudo em 2,5 s.
+    if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.documentElement.classList.add("anim");
+      setTimeout(function () { document.documentElement.classList.remove("anim"); }, 2500);
+    }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <nav class="site-nav" aria-label="Principal">
+        <a class="logo" href="index.html">CILIB <small><span data-year>2026</span></small></a>
+        <ul class="nav-links">
+          <li><a href="index.html#thalita">Quem é</a></li>
+          <li><a href="index.html#estante">Estante</a></li>
+          <li><a href="index.html#blog">Blog</a></li>
+          <li><a href="index.html#linha">Linha do tempo</a></li>
+          <li><a href="index.html#mural">Mural</a></li>
+        </ul>
+        <a class="btn btn-ink btn-sm nav-cta" href="#comentarios">Comentar</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Abrir menu"><span></span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article id="article"><p class="loading">Carregando texto…</p></article>
+
+    <section class="comments wrap-narrow" id="comments-section" hidden>
+      <div class="comments-card" id="comentarios">
+        <div class="stack" style="gap:6px">
+          <h2>Comentários</h2>
+          <p class="muted" id="comment-count"></p>
+        </div>
+        <ul class="comment-list" id="comment-list"></ul>
+        <form class="comment-form" id="comment-form" novalidate>
+          <div class="row">
+            <div class="field">
+              <label for="c-name">Seu nome</label>
+              <input id="c-name" name="name" required maxlength="60" autocomplete="given-name">
+            </div>
+            <div class="field">
+              <label for="c-class">Turma ou escola <small>(opcional)</small></label>
+              <input id="c-class" name="class_group" maxlength="60">
+            </div>
+          </div>
+          <div class="field">
+            <label for="c-body">Comentário</label>
+            <textarea id="c-body" name="body" required maxlength="600"></textarea>
+            <small>Os comentários aparecem depois da aprovação da equipe.</small>
+          </div>
+          <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div><button class="btn btn-ink" type="submit">Enviar comentário</button></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-card">
+        <div class="footer-row">
+          <span>Blog do CILIB <span data-year>2026</span>. Autora homenageada: Thalita Rebouças.</span>
+          <span><a href="index.html">Página inicial</a></span>
+        </div>
+        <p class="footer-credit">Site feito por <strong>João Victor Marcondes Machado Barbosa de Queiroz</strong>, 3º ano B.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/anim.js"></script>
+  <script src="assets/js/post.js"></script>
+</body>
+</html>

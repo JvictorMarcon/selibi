@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Área da equipe | Blog do CILIB</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23241B33'/%3E%3Ctext x='32' y='46' font-family='Arial Black,sans-serif' font-size='40' font-weight='900' text-anchor='middle' fill='%23FF5C9E'%3ET%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <nav class="site-nav" aria-label="Principal">
+        <a class="logo" href="index.html">CILIB <small>Área da equipe</small></a>
+        <a class="btn btn-ghost btn-sm" href="index.html">Ver o site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="admin-main wrap">
+
+    <!-- Login -->
+    <section id="view-login" hidden>
+      <form class="admin-box" id="login-form">
+        <h1>Entrar</h1>
+        <p class="muted">Acesso só para quem cuida do blog.</p>
+        <div class="field">
+          <label for="l-email">E-mail</label>
+          <input id="l-email" name="email" type="email" required autocomplete="username">
+        </div>
+        <div class="field">
+          <label for="l-pass">Senha</label>
+          <input id="l-pass" name="password" type="password" required autocomplete="current-password">
+        </div>
+        <button class="btn btn-ink" type="submit">Entrar</button>
+      </form>
+    </section>
+
+    <!-- Sem permissão -->
+    <section id="view-denied" hidden>
+      <div class="admin-box">
+        <h1>Quase lá</h1>
+        <p>Você entrou, mas sua conta ainda não é administradora do blog. No Supabase, abra o SQL Editor e rode:</p>
+        <pre>insert into public.admins (user_id) values ('<span id="denied-uid"></span>');</pre>
+        <p class="muted">Depois, recarregue esta página.</p>
+        <button class="btn btn-ghost" type="button" data-logout>Sair</button>
+      </div>
+    </section>
+
+    <!-- Painel -->
+    <section id="view-panel" hidden>
+      <div class="admin-top">
+        <h1>Painel do blog</h1>
+        <div class="form-actions">
+          <span class="muted" id="who"></span>
+          <button class="btn btn-ghost btn-sm" type="button" data-logout>Sair</button>
+        </div>
+      </div>
+
+      <div class="admin-grid">
+        <form class="panel" id="post-form">
+          <h2 id="form-title">Novo texto</h2>
+          <div class="field">
+            <label for="p-title">Título</label>
+            <input id="p-title" name="title" required maxlength="140">
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="p-slug">Endereço (slug)</label>
+              <input id="p-slug" name="slug" maxlength="80" placeholder="gerado a partir do título">
+            </div>
+            <div class="field">
+              <label for="p-cat">Categoria</label>
+              <input id="p-cat" name="category" list="cats" placeholder="Vida e obra">
+              <datalist id="cats">
+                <option value="Vida e obra"><option value="Opinião"><option value="Resenha"><option value="Entrevista"><option value="Notícias do CILIB">
+              </datalist>
+            </div>
+          </div>
+          <div class="field">
+            <label for="p-excerpt">Resumo</label>
+            <textarea id="p-excerpt" name="excerpt" maxlength="280" style="min-height:80px"></textarea>
+            <small>Aparece no card do blog e no topo do texto.</small>
+          </div>
+          <div class="field">
+            <label for="p-content">Texto</label>
+            <textarea id="p-content" name="content" required></textarea>
+          </div>
+          <p class="help">Deixe uma linha em branco entre parágrafos. Use <code>## </code> para subtítulo, <code>&gt; </code> para citação, <code>- </code> para lista, <code>**negrito**</code>, <code>*itálico*</code> e <code>[texto](https://link)</code>.</p>
+          <div class="form-row">
+            <div class="field">
+              <label for="p-author">Autor(a)</label>
+              <input id="p-author" name="author_name" value="Equipe CILIB" maxlength="80">
+            </div>
+            <div class="field">
+              <label for="p-date">Data de publicação</label>
+              <input id="p-date" name="published_at" type="date">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="p-tone">Cor do card</label>
+              <select id="p-tone" name="tone">
+                <option value="pink">Chiclete</option>
+                <option value="sun">Sol</option>
+                <option value="sky">Céu</option>
+                <option value="mint">Menta</option>
+                <option value="lilac">Lilás</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="p-credit">Crédito da imagem</label>
+              <input id="p-credit" name="image_credit" maxlength="120" placeholder="Ex.: Foto de Fulano / Divulgação">
+            </div>
+          </div>
+          <div class="field">
+            <label>Imagem de capa (opcional)</label>
+            <div class="upload-row">
+              <img class="upload-preview" id="p-preview" alt="" hidden>
+              <label class="btn btn-ghost btn-sm upload-btn">Enviar imagem
+                <input type="file" accept="image/jpeg,image/png,image/webp" id="p-file" hidden>
+              </label>
+              <button class="btn btn-ghost btn-sm" type="button" id="p-clear" hidden>Remover</button>
+            </div>
+            <input name="cover_url" type="url" placeholder="ou cole o link de uma imagem (https://)">
+            <small>JPG, PNG ou WebP até 5 MB. Use só imagens que a escola tem direito de usar.</small>
+          </div>
+          <label class="check"><input type="checkbox" name="published" checked> Publicar agora (desmarque para salvar como rascunho)</label>
+          <div class="form-actions">
+            <button class="btn btn-ink" type="submit" id="save-btn">Publicar texto</button>
+            <button class="btn btn-ghost" type="button" id="cancel-edit" hidden>Cancelar edição</button>
+          </div>
+        </form>
+
+        <div class="stack">
+          <div class="panel">
+            <h2>Para aprovar <span class="badge" id="pending-count">0</span></h2>
+            <ul class="admin-list" id="pending-list"></ul>
+          </div>
+          <div class="panel">
+            <h2>Textos</h2>
+            <ul class="admin-list" id="post-list"></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="admin-grid admin-grid-2">
+        <div class="panel">
+          <h2>Fotos da Thalita</h2>
+          <p class="muted">Aparecem no topo do site, na seção "Quem é" e como imagem padrão dos textos sem capa.</p>
+          <div class="photo-slots" id="photo-slots"></div>
+        </div>
+        <div class="panel">
+          <h2>Capas da estante</h2>
+          <p class="muted">Envie a capa de cada livro. Sem capa, o site mostra a ilustração colorida.</p>
+          <ul class="admin-list" id="book-list"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>
